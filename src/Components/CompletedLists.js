@@ -7,7 +7,7 @@ const CompletedLists = ({ task }) => {
   };
 
   const id = task._id;
-  
+
   const handleDelete = () => {
     swal({
       title: "Are you sure?",
@@ -18,12 +18,11 @@ const CompletedLists = ({ task }) => {
     }).then((willDelete) => {
       if (willDelete) {
         console.log("clicked");
-        fetch(`http://localhost:5000/completed/${id}`, {
+        fetch(`https://immense-depths-73357.herokuapp.com/completed/${id}`, {
           method: "delete",
           headers: {
             "Content-Type": "application/json",
           },
-          
         })
           .then((res) => res.json())
           .then((data) => {

@@ -5,7 +5,7 @@ const CompletedTask = () => {
   const [lists, setLists] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:5000/completed")
+    fetch("https://immense-depths-73357.herokuapp.com/completed")
       .then((res) => res.json())
       .then((data) => {
         setLists(data);

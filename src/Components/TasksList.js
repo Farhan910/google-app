@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
 const TasksList = ({ task }) => {
- 
-const id = task._id
+  const id = task._id;
 
   const {
     register,
@@ -19,7 +18,7 @@ const id = task._id
   const handleClicked = () => {
     //
     console.log("clicked");
-    fetch(`http://localhost:5000/completed`, {
+    fetch(`https://immense-depths-73357.herokuapp.com/completed`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +32,7 @@ const id = task._id
     swal("Success", "Your Task successfully added!", "success");
 
     if (handleClicked) {
-      fetch(`http://localhost:5000/toDoList`, {
+      fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
         method: "delete",
         headers: {
           "Content-Type": "application/json",
@@ -50,11 +49,11 @@ const id = task._id
   const onSubmit = async (data) => {
     console.log("clicked");
 
-    const list ={
+    const list = {
       task: data.text,
-    }
+    };
 
-    fetch(`http://localhost:5000/toDoList/${id}`, {
+    fetch(`https://immense-depths-73357.herokuapp.com/toDoList/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
