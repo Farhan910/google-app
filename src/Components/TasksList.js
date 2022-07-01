@@ -1,7 +1,7 @@
 import React from "react";
 import swal from "sweetalert";
 import { useForm } from "react-hook-form";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const TasksList = ({ task }) => {
   const list = {
@@ -17,7 +17,7 @@ const TasksList = ({ task }) => {
   const handleClicked = () => {
     //
     console.log("clicked");
-    fetch(`http://localhost:5000/completed`, {
+    fetch(`https://immense-depths-73357.herokuapp.com/completed`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const TasksList = ({ task }) => {
     swal("Success", "Your Task successfully added!", "success");
 
     if (handleClicked) {
-      fetch(`http://localhost:5000/toDoList`, {
+      fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
         method: "delete",
         headers: {
           "Content-Type": "application/json",
@@ -44,13 +44,11 @@ const TasksList = ({ task }) => {
   };
 
   //
-  
-  
 
   const onSubmit = (data) => {
     console.log("clicked");
 
-    fetch(`http://localhost:5000/toDoList`, {
+    fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
