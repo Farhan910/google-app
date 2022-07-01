@@ -12,7 +12,7 @@ const CompletedTask = () => {
       });
   });
   return (
-    <div className="grid lg:grid-cols-3 gap-10 px-28 lg:w-full">
+    <div className="grid lg:grid-cols-3 sm:grid-cols-1 sm:w-max gap-10 lg:px-28 lg:w-full">
       {lists?.map((task) => (
         <CompletedLists task={task}></CompletedLists>
       ))}

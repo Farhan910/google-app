@@ -13,7 +13,7 @@ const ToDoLIst = () => {
   }, [lists]);
 
   return (
-    <div className="grid lg:grid-cols-3 gap-10 px-28 lg:w-full">
+    <div className="grid lg:grid-cols-3 gap-10 lg:px-28 lg:w-full">
       {lists?.map((list) => (
         <TasksList task={list}></TasksList>
       ))}

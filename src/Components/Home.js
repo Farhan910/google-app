@@ -46,7 +46,7 @@ const Home = () => {
               </label>
               <input
                 type="text"
-                placeholder="Your Task"
+                placeholder="Task Tittle"
                 className="input input-bordered w-full mb-2 max-w-xs"
                 {...register("text", {
                   required: {
@@ -58,9 +58,9 @@ const Home = () => {
             </div>
 
             <input
-              className="btn w-full max-w-xs mt-5 text-white"
+              className="btn btn-outline btn-success w-full mt-5 text-white"
               type="submit"
-              value="Add "
+              value="Add"
             />
           </form>
         </div>

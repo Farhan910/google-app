@@ -98,7 +98,7 @@ const TasksList = ({ task }) => {
                     <div>
                       <input
                         type="text"
-                        placeholder="Your Task"
+                        placeholder="Task Tittle"
                         className="input input-bordered w-full mb-2 max-w-xs"
                         {...register("text", {
                           required: {
