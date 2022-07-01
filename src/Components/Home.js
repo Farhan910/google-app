@@ -19,7 +19,7 @@ const Home = () => {
     console.log(tasks);
 
     if (tasks.task) {
-      fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
+      fetch(`http://localhost:5000/toDoList`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -29,8 +29,9 @@ const Home = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          swal("Success", "Your Task successfully added!", "success");
         });
+        swal("Success", "Your Task successfully added!", "success");
+        
     }
   };
 

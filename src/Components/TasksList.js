@@ -4,9 +4,8 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
 const TasksList = ({ task }) => {
-  const list = {
-    task: task.task,
-  };
+ 
+const id = task._id
 
   const {
     register,
@@ -14,10 +13,13 @@ const TasksList = ({ task }) => {
     handleSubmit,
   } = useForm();
 
+  const list = {
+    task: task.task,
+  };
   const handleClicked = () => {
     //
     console.log("clicked");
-    fetch(`https://immense-depths-73357.herokuapp.com/completed`, {
+    fetch(`http://localhost:5000/completed`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +33,7 @@ const TasksList = ({ task }) => {
     swal("Success", "Your Task successfully added!", "success");
 
     if (handleClicked) {
-      fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
+      fetch(`http://localhost:5000/toDoList`, {
         method: "delete",
         headers: {
           "Content-Type": "application/json",
@@ -45,10 +47,14 @@ const TasksList = ({ task }) => {
 
   //
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("clicked");
 
-    fetch(`https://immense-depths-73357.herokuapp.com/toDoList`, {
+    const list ={
+      task: data.text,
+    }
+
+    fetch(`http://localhost:5000/toDoList/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +120,7 @@ const TasksList = ({ task }) => {
                 </form>
                 <div class="modal-action">
                   <label for="my-modal-6" class="btn btn-xs">
-                    X
+                    Cancel
                   </label>
                 </div>
               </div>
