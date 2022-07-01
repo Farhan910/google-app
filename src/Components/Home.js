@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
+import ToDoLIst from "./ToDoLIst";
 
 const Home = () => {
   const {
@@ -34,8 +35,8 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="mt-5 h-screen">
+      <div className="card w-96 mx-auto bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Add Task </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -63,6 +64,9 @@ const Home = () => {
             />
           </form>
         </div>
+      </div>
+      <div className="mt-5">
+        <ToDoLIst />
       </div>
     </div>
   );

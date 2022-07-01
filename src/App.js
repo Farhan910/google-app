@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Calendar from './Components/Calendar';
+import CalendarApi from './Components/CalendarApi';
 import CompletedTask from './Components/CompletedTask';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/toDoList" element={<ToDoLIst/>} />
       <Route path="/completedTask" element={<CompletedTask/>} />
-      <Route path="/calendar" element={<Calendar/>} />
+      <Route path="/calendar" element={<CalendarApi/>} />
       <Route path="/toDoList/:id" element={<TasksList/>} />
      </Routes>
     </div>
